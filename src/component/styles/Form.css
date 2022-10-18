@@ -1,18 +1,31 @@
+.form-popup{
+    background-color: blue;
+}
+
+.form-class{
+    margin: 40px 40px 40px 40px; 
+    
+    background-color: aqua;
+}
 
 .form{
-    margin-left: 50px;
+    padding: 40px 40px ;
+    margin-left: 40px;
+    margin-right: 80px;
     margin-top: 20px;
-    margin-right: 800px;
     border-radius: 8px;
 }
 
 #submit{
-    margin-left: 230px;
+    margin-left: 130px;
+}
+#img{
+    margin-top: 60px;
+    background-color: blueviolet;
 }
 
-
 #progressbar{
-    height: 30px;
-    width: 500px;
-    margin-left: 150px;
+   height: 30px;
+   width: 300px;
+   margin-left: 80px;
 }

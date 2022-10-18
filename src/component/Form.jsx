@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import Lottie from 'react-lottie';
+import * as lockDoor from './lock_door.json'; 
+
+
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './styles/Form.css'
+import img1 from '../imgs1.jpg'
+
  export const Form = () => {
   // validateFirstName(firstName);
   const [firstName, setFirstName] = useState('');
@@ -11,6 +17,21 @@ import './styles/Form.css'
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const navigate = useNavigate();
+
+
+  //img display
+  const options={
+    loop:true,
+    autoplay:true,
+    animationData: lockDoor,
+    renderSettings:{
+      preserveAspectRation : 'xMidYMid slice'
+    }
+  }
+
+
+
+
   // handlers
   const handleSubmit = () => {
     const isOk = checkFirst() & checkLast() & checkEmail() & checkPhone();
@@ -115,7 +136,8 @@ import './styles/Form.css'
   
   return (
     <>
-      <div className="form-class">
+      <div className="form-popup">
+        <div className='form-class'>
         <form className="form">
           <br />
           <label htmlFor="name">
@@ -208,12 +230,16 @@ import './styles/Form.css'
 
           <Button id="submit" variant="contained" onClick={handleSubmit}>
             Save & Continue
-          </Button>
+          </Button><br/><br/>
+          <progress value={50} max={100} id="progressbar">1</progress>
         </form>
-
-        <br/>
-        <progress value={50} max={100} id="progressbar">1</progress>
       </div>
+      
+      </div>
+      <center>
+      {/* <img id="img" src={img1} alt='not found' height="500px" width={"500px"}/> */}
+      <Lottie options={options} height={"500px"} width={"500px"}/>
+      </center>
     </>
   );
 };
