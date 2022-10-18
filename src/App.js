@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { Page1 } from './component/Page1.jsx'
+import { Header } from './component/Header.jsx';
+import { Footer } from './component/Footer.jsx';
+import { Form } from './component/Form.jsx';
+import { UserDetails } from './component/UserDetails.jsx';
+import { Welcome } from './component/Welcome.jsx';
+import {Error} from "./component/Error.jsx";
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Form />} />
+          <Route path="/more" element={<UserDetails />} />
+          <Route path="/home" element={<Welcome />} />
+          <Route path="*" element={<Error/>} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
 
-export default App;
+// https://codesandbox.io/embed/txzui

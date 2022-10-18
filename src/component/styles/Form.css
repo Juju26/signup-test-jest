@@ -1,0 +1,18 @@
+
+.form{
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 800px;
+    border-radius: 8px;
+}
+
+#submit{
+    margin-left: 230px;
+}
+
+
+#progressbar{
+    height: 30px;
+    width: 500px;
+    margin-left: 150px;
+}
